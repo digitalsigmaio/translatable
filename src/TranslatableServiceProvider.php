@@ -6,7 +6,7 @@
  * Time: 3:37 PM
  */
 
-namespace Digitalsigma\Multilang;
+namespace Digitalsigma\Translatable;
 
 
 use Illuminate\Support\ServiceProvider;
