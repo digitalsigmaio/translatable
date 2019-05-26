@@ -8,6 +8,7 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\App;
 
 trait Translatable
 {
@@ -60,5 +61,14 @@ trait Translatable
         } else {
             $this->addTranslation($translations);
         }
+    }
+
+    protected function getTranslation(string $attribute): string
+    {
+        if (App::getLocale() === 'ar')
+
+            return $this->translation->{$attribute} ?: '';
+
+        return $this->attributes[$attribute];
     }
 }
