@@ -6,7 +6,7 @@
  * Time: 5:40 PM
  */
 
-namespace App\Traits;
+namespace Digitalsigma\Translatable\Http\Traits;
 
 use Illuminate\Support\Facades\App;
 

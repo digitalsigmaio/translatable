@@ -27,7 +27,7 @@ class Language
         } else {
             $segments = $request->segments();
             $locale = session()->get('locale') ?? App::getLocale();
-            
+
             array_unshift($segments, $locale);
             return redirect(implode('/', $segments));
         }
