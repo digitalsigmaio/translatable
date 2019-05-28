@@ -17,14 +17,18 @@ class Language
     public function handle($request, Closure $next)
     {
         $locale = $request->segment(1);
-
         if (in_array($locale, config('app.locales'))) {
+            if (!session()->has('locale') || session()->get('locale') !== $locale) {
+                session()->put('locale', $locale);
+            }
+
             App::setLocale($locale);
             return $next($request);
         } else {
             $segments = $request->segments();
-            $segments[0] = config('app.fallback_locale');
-
+            $locale = session()->get('locale') ?? App::getLocale();
+            
+            array_unshift($segments, $locale);
             return redirect(implode('/', $segments));
         }
     }
