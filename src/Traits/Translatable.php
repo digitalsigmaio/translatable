@@ -69,6 +69,6 @@ trait Translatable
 
             return $this->translation->{$attribute} ?: '';
 
-        return $this->attributes[$attribute];
+        return $this->attributes[$attribute] ?? '';
     }
 }
