@@ -17,7 +17,7 @@ class Language
     public function handle($request, Closure $next)
     {
         $locale = $request->segment(1);
-        if (in_array($locale, config('app.locales'))) {
+        if (in_array($locale, config('translatable.locales'))) {
             if (!session()->has('locale') || session()->get('locale') !== $locale) {
                 session()->put('locale', $locale);
             }

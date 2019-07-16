@@ -34,7 +34,7 @@ trait Translatable
             if (!in_array($locale, config('translatable.locales')))
                 throw new \Exception('Undefined locale');
         } else {
-            $locale = config('translatable.default');
+            $locale = config('translatable.locale');
         }
 
         $filteredTranslations = [];

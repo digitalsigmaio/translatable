@@ -8,7 +8,6 @@
 return [
     'locale' => env('APP_LOCALE', 'en'),
     'fallback_local' => 'en',
-    'default' => 'ar',
     'locales' => [
         'ar',
         'en'
